@@ -20,7 +20,7 @@
  *
  * ## Installation
  * ## Upload file to modules-Directory
- * ## module entry in Admin: oxbasket => marm/marm_diff_oxbasket
+ * ## module entry in Admin: oxbasket => marm_diff_oxbasket
  * ## Place the getter-Function in your template: [{$oxcmp_basket->getPriceUntilFreeShipping()}]
  *
  */
