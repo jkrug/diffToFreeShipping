@@ -30,7 +30,11 @@ class marm_diff_oxbasket extends marm_diff_oxbasket_parent
     public function getPriceUntilFreeShipping()
     {
         if ( $this->_oProductsPriceList ) {
+            if ( !$this->isCalculationModeNetto() ){
             $productsPrice = $this->_oProductsPriceList->getBruttoSum();
+            } else {
+            $productsPrice = $this->_oProductsPriceList->getNettoSum();
+            }
             $oDB = oxDb::getDb();
             $sQ = 'select OXPARAM from oxdelivery where OXADDSUM = 0';
             $freeShippingPrice = oxDb::getDb()->GetOne($sQ);
